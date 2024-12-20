@@ -19,4 +19,4 @@ function sum_multi(a)
 end
 
 #println(sum_multi(1:1_000_000_000))
-@btime sum_multi(1:1_000_000_000)
+@btime sum_multi(1:999_999_999_999)

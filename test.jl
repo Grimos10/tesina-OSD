@@ -13,4 +13,4 @@ function montecarlo_pi(num_samples)
     return 4 * inside_circle[] / num_samples
 end
 
-@btime montecarlo_pi(10^7)
+@btime montecarlo_pi(10^9)
