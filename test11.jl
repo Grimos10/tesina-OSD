@@ -3,11 +3,16 @@
 ########################################
 using BenchmarkTools
 
-n = 2_000_000_000
+n = 1_000_000_000
 
-myvector = collect(1:n)
-
+#myvector = collect(1:n)
+myvector = Vector{Int8}(undef, n)
+for i in 1:n
+    myvector[i] = Int8(i % 128)
+end
 # single-threaded
+
+myvector
 
 @btime sum(myvector)
 
