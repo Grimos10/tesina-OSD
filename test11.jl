@@ -7,14 +7,23 @@ n = 1_000_000_000
 
 #myvector = collect(1:n)
 myvector = Vector{Int8}(undef, n)
-for i in 1:n
+@btime Threads.@threads for i in 1:n
     myvector[i] = Int8(i % 128)
+end
+
+myvector2 = Vector{Int8}(undef, n)
+@btime for i in 1:n
+    myvector2[i] = Int8(i % 128)
 end
 # single-threaded
 
-myvector
+if all(myvector .== myvector2)
+    println("Uguali")
+end
 
 @btime sum(myvector)
+
+sum(myvector2)
 
 # single-threaded
 

@@ -2,20 +2,18 @@ using Base.Threads
 using BenchmarkTools
 
 function increment_with_lock(n)
-    my_lock = ReentrantLock()  # Crea un oggetto lock
-    counter = 0  # Variabile condivisa da proteggere
+    my_lock = ReentrantLock()  
+    counter = 0 
 
     Threads.@threads for _ in 1:n
         lock(my_lock) do
             counter += 1
         end
     end
-
+    
     return counter
 end
 
-# Test della funzione
-n = 10^5  # Numero di iterazioni
-@time result = increment_with_lock(n)
+n = 10^6  
+@btime result = increment_with_lock(n)
 
-println("Risultato: $result")

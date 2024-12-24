@@ -3,10 +3,10 @@ using BenchmarkTools
 
 function sum_single(a)
     s = 0
-    for i in a
-        s += i
+    for x in a
+        s += x
     end
-    s
+    return s
 end
 
 function sum_multi(a)
@@ -18,5 +18,4 @@ function sum_multi(a)
     return sum_single(chunk_sums)
 end
 
-#println(sum_multi(1:1_000_000_000))
 @btime sum_multi(1:999_999_999_999_999_999)
