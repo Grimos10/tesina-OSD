@@ -1,6 +1,10 @@
-# tesina-OSD
+# Multi-threading in Julia
 
-This repository contains the code and the final pdf of my report for the course of Operating System Desing (OSD) at Unimore.
+Welcome to the repository for my final report on multi-threading in Julia, created for the Operating System Design (OSD) course at Unimore.
 
-The report was about the multi-threading in Julia.
+This repository includes:
+- The source code used in the report
+- The final PDF of the report
+
+Explore the fascinating world of multi-threading in Julia through this comprehensive study.
 
